@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjarbek Tursunov</title>
+  <!-- Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- CSS for styling and animations -->
+  <style>
+    /* VARIABLES */
+    :root{
+      --bg1:#E0F7FA; /* Light Cyan */
+      --bg2:#E1F5FE; /* Light Blue */
+      --card1:#F0F8FF; /* AliceBlue */
+      --card2:#E6F3FF; /* Very light blue */
+      --accent:#1E88E5; /* Vibrant Blue */
+      --text:#333;
+      --muted:#666;
+      --radius:22px;
+      --shadow:0 18px 50px rgba(0,0,0,.08);
+      --border:1px solid rgba(0,0,0,.06);
+    }
+
+    /* GLOBAL STYLES */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      color:var(--text);
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      background-attachment: fixed;
+    }
+    a{color:var(--accent); text-decoration:none; transition: color 0.3s ease;}
+    a:hover{color: #0d47a1;}
+
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: rgba(255,255,255,.85); border-bottom:var(--border)}
+    .nav .wrap{max-width:1100px; margin:auto; padding:14px 18px; display:flex; align-items:center; justify-content:space-between}
+    .logo{font-weight:800; letter-spacing:.2px; color:var(--accent); transition: transform 0.3s ease;}
+    .logo:hover{transform: scale(1.05);}
+    .links{display:flex; gap:18px; font-weight:600}
+    .links a{padding:8px 12px; border-radius:12px; transition: background 0.3s ease, transform 0.3s ease;}
+    .links a:hover{background:rgba(0,0,0,.05); transform: translateY(-2px);}
+
+    /* HERO */
+    .hero{max-width:1100px; margin:0 auto; padding:70px 18px 24px;}
+    .title{font-size:clamp(34px,5vw,56px); line-height:1.06; margin:0 0 10px; animation: fadeInUp 0.8s ease-out;}
+    .subtitle{color:var(--muted); font-size:clamp(16px,2vw,18px); animation: fadeInUp 1s ease-out;}
+
+    /* KEYFRAMES FOR ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CONTENT SECTIONS */
+    section{max-width:1100px; margin:0 auto; padding:40px 18px}
+    .section-head{max-width:1100px; margin:0 auto 12px; padding:0; display:flex; align-items:end; justify-content:space-between}
+    .section-title{font-size:clamp(26px,3vw,34px); margin:0; border-bottom: 2px solid var(--accent); display: inline-block;}
+    .card-list{display:grid; gap:18px;}
+    .card{background:rgba(255,255,255,1); border-radius:18px; padding:18px; border:var(--border); box-shadow:var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .card:hover{transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,.1);}
+    .card h3{margin:0 0 6px; color:var(--accent);}
+    .card p{color:#444; margin:0 0 10px;}
+    .card h4{margin:0;}
+    .card-meta{color:var(--muted); font-size:14px;}
+
+    /* ABOUT SECTION */
+    .about-card{background:linear-gradient(135deg, var(--card1), var(--card2)); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow); border:var(--border); animation: fadeInUp 1s ease-out;}
+    .about-card h3{margin:0 0 10px; color:var(--accent)}
+    .about-card p{color:#444}
+
+    /* FOOTER */
+    footer{padding:40px 18px 60px; text-align:center; color:#555}
+    .footbox{max-width:1100px; margin:0 auto; background:rgba(255,255,255,.8); border-radius:18px; padding:18px; border:var(--border); box-shadow:var(--shadow)}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <span class="logo">Sanjarbek Tursunov</span>
+      <div class="links">
+        <a href="{% url 'pages:home' %}">Home</a>
+        <a href="{% url 'pages:hobby' %}">Hobby</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1 class="title">Sanjarbek Tursunov</h1>
+      <p class="subtitle">Software Engineer at ZK, Mentor at Najot Ta'lim.</p>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="section-head">
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-card">
+        <p>With over a year of hands-on experience, I've had the pleasure of working extensively with Python, Django, FastAPI, and Django Rest Framework to craft robust and scalable web solutions. 💻</p>
+        <p>During this incredible journey, I've successfully built multiple websites using the powerful Django and FastAPI frameworks. From creating seamless RESTful APIs with Django Rest Framework to handling complex backend logic, it's been a rollercoaster of challenges and triumphs.</p>
+        <p>What truly fuels my passion, though, is my expertise in developing Telegram bots. 🤖💬 Building interactive and engaging bots for various purposes has allowed me to combine my love for coding with the dynamic world of chatbots.</p>
+        <p>I'm immensely grateful for the experiences, the lessons learned, and the fantastic projects I've had the opportunity to work on. But this is just the beginning! 🚀 I'm excited about what the future holds and the innovative solutions I'll get to be a part of.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-head">
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="card-list">
+      <article class="card">
+        <h3>Software Engineer</h3>
+        <p>Zamonaviy Kommunikatsiyalar LLC</p>
+        <div class="card-meta">Feb 2025 - Present (7 months)</div>
+        <div class="card-meta">Tashkent, Uzbekistan</div>
+      </article>
+      <article class="card">
+        <h3>Mentor</h3>
+        <p>Najot Ta'lim</p>
+        <div class="card-meta">Feb 2024 - Present (1 year 7 months)</div>
+        <div class="card-meta">Tashkent, Uzbekistan</div>
+        <ul>
+            <li>teaching students software development with Python</li>
+            <li>creating and using apis with python</li>
+            <li>deploying projects to different services</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Python Developer</h3>
+        <p>Mars IT School</p>
+        <div class="card-meta">2023 - Feb 2024 (1 year)</div>
+        <div class="card-meta">Tashkent, Uzbekistan</div>
+        <ul>
+            <li>teached kids(8-16) to create web applications, mostly backend</li>
+            <li>creating telegram bots, using and creating apis</li>
+            <li>helping young generation to find thier way on IT</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Python Developer</h3>
+        <p>AKFA Group of Companies</p>
+        <div class="card-meta">Sep 2021 - Mar 2022 (7 months)</div>
+        <div class="card-meta">Tashkent, Uzbekistan</div>
+        <ul>
+            <li>Developed backend services for web applications, enterprise systems, mobile applications.</li>
+            <li>Worked on integrations with various systems and applications.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-head">
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="card-list">
+      <article class="card">
+        <h3>Bobir Akilhanov Tech Academy</h3>
+        <p>Python Developer, Computer Programming</p>
+        <div class="card-meta">2020 - 2021</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footbox">
+      <p>© <span id="y"></span> Built by MIR ️</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
